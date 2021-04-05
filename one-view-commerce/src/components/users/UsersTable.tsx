@@ -44,7 +44,10 @@ export default function UsersTable(props: UsersTableProps) {
         </TableHead>
         <TableBody>
           {users.map((user) => {
-            if (user.name.includes(searchText) || searchText === "") {
+            if (
+              user.name.toLowerCase().includes(searchText.toLowerCase()) ||
+              searchText === ""
+            ) {
               return (
                 <TableRow onClick={() => handleHistory(user.id)} key={user.id}>
                   <TableCell align="left">{user.name}</TableCell>

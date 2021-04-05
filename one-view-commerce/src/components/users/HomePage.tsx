@@ -53,6 +53,7 @@ class HomePage extends Component<LinkProps, Props> {
     return (
       <div>
         <SearchBar
+          data-testid="users-search"
           value={this.state.searchText}
           onChange={(newValue) => {
             this.setState({ searchText: newValue });
@@ -61,7 +62,11 @@ class HomePage extends Component<LinkProps, Props> {
             this.setState({ searchText: "" });
           }}
         />
-        <UsersTable users={users} searchText={this.state.searchText} />
+        <UsersTable
+          data-testid="users-table"
+          users={users}
+          searchText={this.state.searchText}
+        />
       </div>
     );
   }
