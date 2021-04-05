@@ -7,21 +7,21 @@ import { UserPost } from './models/UserPost';
 
 import { FETCH_USERPOSTS_URL } from '../../Urls'
 
-const requestUserPosts = (): AppActions => ({
+export const requestUserPosts = (): AppActions => ({
     type: FETCH_USERPOSTS_REQUEST,
     loading: true,
     userPosts: [],
     error: ''
 })
 
-const receiveUserPosts = (userPosts: UserPost[]): AppActions => ({
+export const receiveUserPosts = (userPosts: UserPost[]): AppActions => ({
     type: FETCH_USERPOSTS_SUCCESS,
     loading: false,
     userPosts: userPosts,
     error: ''
 })
 
-const invalidateUserPosts = (error: string): AppActions => ({
+export const invalidateUserPosts = (error: string): AppActions => ({
     type: FETCH_USERPOSTS_FAILURE,
     loading: false,
     userPosts: [],

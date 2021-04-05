@@ -7,21 +7,21 @@ import { User } from './models/User';
 
 import { FETCH_USERS_URL } from '../../Urls'
 
-const requestUsers = (): AppActions => ({
+export const requestUsers = (): AppActions => ({
     type: FETCH_USERS_REQUEST,
     loading: true,
     users: [],
     error: ''
 })
 
-const receiveUsers = (users: User[]): AppActions => ({
+export const receiveUsers = (users: User[]): AppActions => ({
     type: FETCH_USERS_SUCCESS,
     loading: false,
     users: users,
     error: ''
 })
 
-const invalidateUsers = (error: string): AppActions => ({
+export const invalidateUsers = (error: string): AppActions => ({
     type: FETCH_USERS_FAILURE,
     loading: false,
     users: [],

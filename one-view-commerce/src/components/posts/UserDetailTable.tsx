@@ -31,7 +31,7 @@ export default function UserDetailTable(props: UserPostsTableProps) {
         </TableHead>
         <TableBody>
           {userPosts.map((userPost) => (
-            <TableRow key={userPost.id}>
+            <TableRow data-testid="table-row" key={userPost.id}>
               <TableCell align="left">{userPost.title}</TableCell>
               <TableCell align="left">{userPost.body}</TableCell>
             </TableRow>

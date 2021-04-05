@@ -58,7 +58,9 @@ class UserDetailPage extends Component<LinkProps> {
         >
           Back
         </Button>
-        <UserDetailTable userPosts={userPosts} />
+        <div data-testid="posts-table">
+          <UserDetailTable userPosts={userPosts} />
+        </div>
       </div>
     );
   }

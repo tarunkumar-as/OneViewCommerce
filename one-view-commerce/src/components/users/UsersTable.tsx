@@ -49,7 +49,12 @@ export default function UsersTable(props: UsersTableProps) {
               searchText === ""
             ) {
               return (
-                <TableRow onClick={() => handleHistory(user.id)} key={user.id}>
+                <TableRow
+                  id="tablerow"
+                  data-testid="table-row"
+                  onClick={() => handleHistory(user.id)}
+                  key={user.id}
+                >
                   <TableCell align="left">{user.name}</TableCell>
                   <TableCell align="left">{user.email}</TableCell>
                   <TableCell align="left">{user.address.city}</TableCell>
@@ -57,7 +62,7 @@ export default function UsersTable(props: UsersTableProps) {
                 </TableRow>
               );
             } else {
-              return <div />;
+              return <div></div>;
             }
           })}
         </TableBody>

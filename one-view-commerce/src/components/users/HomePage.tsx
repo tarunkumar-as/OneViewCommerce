@@ -51,7 +51,7 @@ class HomePage extends Component<LinkProps, Props> {
   render() {
     const { users } = this.props;
     return (
-      <div>
+      <div id="increment">
         <SearchBar
           data-testid="users-search"
           value={this.state.searchText}
@@ -62,11 +62,9 @@ class HomePage extends Component<LinkProps, Props> {
             this.setState({ searchText: "" });
           }}
         />
-        <UsersTable
-          data-testid="users-table"
-          users={users}
-          searchText={this.state.searchText}
-        />
+        <div data-testid="users-table">
+          <UsersTable users={users} searchText={this.state.searchText} />
+        </div>
       </div>
     );
   }
