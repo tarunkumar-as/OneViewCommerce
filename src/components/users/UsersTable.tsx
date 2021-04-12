@@ -62,7 +62,7 @@ export default function UsersTable(props: UsersTableProps) {
                 </TableRow>
               );
             } else {
-              return <div></div>;
+              return null;
             }
           })}
         </TableBody>
